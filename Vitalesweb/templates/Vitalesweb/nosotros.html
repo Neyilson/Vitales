@@ -1,0 +1,151 @@
+{% extends 'Vitalesweb/base.html' %}
+{% load static %}
+
+{% block title %}Nosotros - Servicios Vitales de Salud{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3 fw-bold mb-3">Sobre Nosotros</h1>
+                <p class="lead">Conoce nuestra historia, misión y valores</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Image Section -->
+<section class="team-image-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="team-image-wrapper rounded-4 shadow-lg overflow-hidden">
+                    <img src="{% static team_image %}" alt="Equipo Vitales" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision-section py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Mission -->
+            <div class="col-lg-6">
+                <div class="mission-card bg-white p-5 rounded-4 shadow-sm h-100 hover-lift">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-wrapper bg-primary text-white rounded-circle p-3 me-3">
+                            <i class="bi bi-bullseye fs-1"></i>
+                        </div>
+                        <h2 class="fw-bold text-primary mb-0">Nuestra Misión</h2>
+                    </div>
+                    <p class="lead text-muted mb-0">{{ mission }}</p>
+                </div>
+            </div>
+            
+            <!-- Vision -->
+            <div class="col-lg-6">
+                <div class="vision-card bg-white p-5 rounded-4 shadow-sm h-100 hover-lift">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-wrapper bg-danger text-white rounded-circle p-3 me-3">
+                            <i class="bi bi-eye fs-1"></i>
+                        </div>
+                        <h2 class="fw-bold text-danger mb-0">Nuestra Visión</h2>
+                    </div>
+                    <p class="lead text-muted mb-0">{{ vision }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-4 fw-bold text-primary mb-3">Nuestros Valores</h2>
+                <p class="lead text-muted">Los principios que guían nuestro trabajo diario</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for value in values %}
+            <div class="col-md-6 col-lg-4">
+                <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100 hover-lift text-center">
+                    <div class="value-icon-wrapper bg-primary bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="bi {{ value.icon }} text-primary fs-1"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3 text-primary">{{ value.name }}</h4>
+                    <p class="text-muted mb-0">{{ value.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us-section py-5 bg-gradient-custom text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">¿Por Qué Elegirnos?</h2>
+                <p class="lead">Características que nos hacen únicos</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card text-center p-4">
+                    <i class="bi bi-clock-history display-1 mb-3"></i>
+                    <h4 class="fw-bold mb-3">Disponibilidad 24/7</h4>
+                    <p>Atención continua todos los días del año</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card text-center p-4">
+                    <i class="bi bi-award-fill display-1 mb-3"></i>
+                    <h4 class="fw-bold mb-3">Profesionales Certificados</h4>
+                    <p>Equipo altamente calificado y experimentado</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card text-center p-4">
+                    <i class="bi bi-gear-fill display-1 mb-3"></i>
+                    <h4 class="fw-bold mb-3">Equipos Modernos</h4>
+                    <p>Tecnología de última generación</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card text-center p-4">
+                    <i class="bi bi-shield-check display-1 mb-3"></i>
+                    <h4 class="fw-bold mb-3">Atención Personalizada</h4>
+                    <p>Cuidado adaptado a tus necesidades</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-4">¿Listo para recibir atención de calidad?</h2>
+                <p class="lead text-muted mb-4">Contáctanos y descubre cómo podemos ayudarte</p>
+                <a href="{% url 'vitalesweb:contacto' %}" class="btn btn-danger btn-lg px-5 py-3">
+                    <i class="bi bi-instagram me-2"></i>Contáctanos en Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,515 @@
+/* ============================================
+   VITALES - CUSTOM STYLESHEET
+   Servicios Vitales de Salud
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES (CORPORATE COLORS)
+   ============================================ */
+:root {
+    /* Primary Colors */
+    --vitales-primary: #0056b3;      /* Medical Dark Blue */
+    --vitales-secondary: #dc3545;    /* Emergency Red */
+    --vitales-accent: #17a2b8;       /* Light Blue */
+    
+    /* Neutral Colors */
+    --vitales-dark: #2c3e50;         /* Dark Gray Text */
+    --vitales-light: #f8f9fa;        /* Light Gray Background */
+    --vitales-white: #ffffff;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #0056b3 0%, #17a2b8 100%);
+    --gradient-danger: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition-base: all 0.3s ease;
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--vitales-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Override Bootstrap Primary Color */
+.bg-primary {
+    background-color: var(--vitales-primary) !important;
+}
+
+.text-primary {
+    color: var(--vitales-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--vitales-primary);
+    border-color: var(--vitales-primary);
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #004494;
+}
+
+.btn-danger {
+    background-color: var(--vitales-secondary);
+    border-color: var(--vitales-secondary);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar {
+    padding: 1rem 0;
+    transition: var(--transition-base);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: var(--transition-base);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--vitales-white);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* ============================================
+   HERO CAROUSEL
+   ============================================ */
+.carousel-img {
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 10;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   STATISTICS SECTION
+   ============================================ */
+.statistics-section {
+    background: var(--gradient-primary);
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition-base);
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 4rem;
+    opacity: 0.9;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    color: var(--vitales-white);
+}
+
+.stat-label {
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* ============================================
+   CLIENTS SECTION
+   ============================================ */
+.client-logo-card {
+    transition: var(--transition-base);
+}
+
+.client-logo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   CALL TO ACTION
+   ============================================ */
+.bg-gradient-custom {
+    background: var(--gradient-primary);
+}
+
+.cta-section .btn {
+    transition: var(--transition-base);
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   SERVICE CARDS
+   ============================================ */
+.service-preview-card,
+.service-card,
+.value-card,
+.benefit-card {
+    transition: var(--transition-base);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.service-image-wrapper {
+    height: 250px;
+    background: linear-gradient(135deg, var(--vitales-primary), var(--vitales-accent));
+}
+
+.service-image {
+    transition: var(--transition-base);
+    opacity: 0.8;
+}
+
+.service-card:hover .service-image {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.service-icon-overlay {
+    opacity: 0.3;
+    transition: var(--transition-base);
+}
+
+.service-card:hover .service-icon-overlay {
+    opacity: 0.6;
+}
+
+/* ============================================
+   PAGE HEADERS
+   ============================================ */
+.page-header {
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+/* ============================================
+   MISSION & VISION CARDS
+   ============================================ */
+.mission-card,
+.vision-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-card::before,
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+}
+
+.mission-card::before {
+    background: var(--vitales-primary);
+}
+
+.vision-card::before {
+    background: var(--vitales-secondary);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   VALUES SECTION
+   ============================================ */
+.value-icon-wrapper {
+    transition: var(--transition-base);
+}
+
+.value-card:hover .value-icon-wrapper {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* ============================================
+   FEATURES & BENEFITS
+   ============================================ */
+.feature-card {
+    transition: var(--transition-base);
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   TEAM IMAGE
+   ============================================ */
+.team-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 86, 179, 0.1) 100%);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer a {
+    transition: var(--transition-base);
+}
+
+footer a:hover {
+    color: var(--vitales-secondary) !important;
+}
+
+.social-icon {
+    transition: var(--transition-base);
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: var(--vitales-secondary) !important;
+}
+
+/* ============================================
+   COVERAGE INFO
+   ============================================ */
+.coverage-info {
+    border-left: 5px solid var(--vitales-primary);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background-color: var(--vitales-primary);
+    color: var(--vitales-white);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 400px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-icon {
+        font-size: 3rem;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        height: 300px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.btn:focus,
+.nav-link:focus {
+    outline: 2px solid var(--vitales-secondary);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--vitales-primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .navbar,
+    footer,
+    .btn,
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+}

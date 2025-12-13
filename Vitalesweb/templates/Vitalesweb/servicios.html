@@ -1,0 +1,170 @@
+{% extends 'Vitalesweb/base.html' %}
+{% load static %}
+
+{% block title %}Servicios - Servicios Vitales de Salud{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-3 fw-bold mb-3">Nuestros Servicios</h1>
+                <p class="lead">Atención integral de salud a domicilio</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Introduction -->
+<section class="services-intro py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-4">Cuidamos de Ti</h2>
+                <p class="lead text-muted">
+                    Ofrecemos una amplia gama de servicios médicos profesionales en la comodidad de tu hogar. 
+                    Nuestro equipo multidisciplinario está comprometido con tu salud y bienestar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services-grid py-5">
+    <div class="container">
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card bg-white rounded-4 shadow-sm overflow-hidden h-100 hover-lift">
+                    <!-- Service Image -->
+                    <div class="service-image-wrapper position-relative overflow-hidden">
+                        <img src="{% static service.image %}" alt="{{ service.title }}" class="img-fluid w-100 service-image">
+                        <div class="service-icon-overlay position-absolute top-50 start-50 translate-middle">
+                            <i class="bi {{ service.icon }} text-white display-1"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Content -->
+                    <div class="service-content p-4">
+                        <h4 class="fw-bold text-primary mb-3">{{ service.title }}</h4>
+                        <p class="text-muted mb-4">{{ service.description }}</p>
+                        
+                        <div class="d-flex align-items-center text-primary">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <small class="fw-bold">Disponible 24/7</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary mb-3">Ventajas de Nuestros Servicios</h2>
+                <p class="lead text-muted">Calidad y profesionalismo en cada atención</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="benefit-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                    <div class="benefit-icon-wrapper bg-primary bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                        <i class="bi bi-house-check-fill text-primary fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Comodidad</h5>
+                    <p class="text-muted small mb-0">Atención en tu hogar sin desplazamientos</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="benefit-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                    <div class="benefit-icon-wrapper bg-danger bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                        <i class="bi bi-speedometer2 text-danger fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Rapidez</h5>
+                    <p class="text-muted small mb-0">Respuesta inmediata a tu solicitud</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="benefit-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                    <div class="benefit-icon-wrapper bg-info bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                        <i class="bi bi-star-fill text-info fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Calidad</h5>
+                    <p class="text-muted small mb-0">Estándares profesionales certificados</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="benefit-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                    <div class="benefit-icon-wrapper bg-success bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                        <i class="bi bi-cash-coin text-success fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Accesibilidad</h5>
+                    <p class="text-muted small mb-0">Precios competitivos y transparentes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-gradient-custom text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <h2 class="display-5 fw-bold mb-3">¿Necesitas más información?</h2>
+                <p class="lead mb-0">Escríbenos a nuestro Instagram y con gusto te atenderemos</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="{% url 'vitalesweb:contacto' %}" class="btn btn-light btn-lg px-5 py-3 shadow-lg hover-grow">
+                    <i class="bi bi-instagram me-2 fs-4"></i>
+                    <span class="fw-bold">Contáctanos</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Areas Section -->
+<section class="service-areas py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h2 class="display-6 fw-bold text-primary mb-3">Cobertura Nacional</h2>
+                <p class="lead text-muted">Llevamos nuestros servicios a donde nos necesites</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="coverage-info bg-light p-5 rounded-4 text-center">
+                    <i class="bi bi-geo-alt-fill text-danger display-1 mb-3"></i>
+                    <h4 class="fw-bold mb-3">Atendemos en todo el territorio nacional</h4>
+                    <p class="text-muted mb-4">
+                        Nuestros servicios médicos están disponibles en las principales ciudades de Venezuela. 
+                        Contamos con una red de profesionales distribuidos estratégicamente para garantizar 
+                        una respuesta rápida y efectiva.
+                    </p>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <span class="badge bg-primary fs-6 px-3 py-2"><i class="bi bi-check-lg me-1"></i>Caracas</span>
+                        <span class="badge bg-primary fs-6 px-3 py-2"><i class="bi bi-check-lg me-1"></i>Maracaibo</span>
+                        <span class="badge bg-primary fs-6 px-3 py-2"><i class="bi bi-check-lg me-1"></i>Valencia</span>
+                        <span class="badge bg-primary fs-6 px-3 py-2"><i class="bi bi-check-lg me-1"></i>Barquisimeto</span>
+                        <span class="badge bg-primary fs-6 px-3 py-2"><i class="bi bi-check-lg me-1"></i>Y más...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
