@@ -45,12 +45,12 @@ def index_view(request):
             }
         ],
         'clients': [
-            {'name': 'Cliente 1', 'logo': 'https://via.placeholder.com/200x100/f8f9fa/0056b3?text=Cliente+1'},
-            {'name': 'Cliente 2', 'logo': 'https://via.placeholder.com/200x100/f8f9fa/0056b3?text=Cliente+2'},
-            {'name': 'Cliente 3', 'logo': 'https://via.placeholder.com/200x100/f8f9fa/0056b3?text=Cliente+3'},
-            {'name': 'Cliente 4', 'logo': 'https://via.placeholder.com/200x100/f8f9fa/0056b3?text=Cliente+4'},
-            {'name': 'Cliente 5', 'logo': 'https://via.placeholder.com/200x100/f8f9fa/0056b3?text=Cliente+5'},
-            {'name': 'Cliente 6', 'logo': 'https://via.placeholder.com/200x100/f8f9fa/0056b3?text=Cliente+6'},
+            {'name': 'PDVSA', 'logo': 'img/pdvsa_logo.png'},
+            {'name': 'Venemergencia', 'logo': 'img/venemergencia_logo.png'},
+            {'name': 'Bancamiga', 'logo': 'img/bancamiga_logo.png'},
+            {'name': 'Bolivariana de Puertos', 'logo': 'img/bolivariana_puertos_logo.png'},
+            {'name': 'La Mundial de Seguros', 'logo': 'img/lamundial_logo.jpg'},
+            {'name': 'UCNE', 'logo': 'img/ucne_logo.png'},
         ],
         'instagram_url': 'https://www.instagram.com/vitales.vzla/'
     }
@@ -66,18 +66,36 @@ def nosotros_view(request):
                   'domicilio, reconocida por la excelencia y el compromiso de nuestro equipo '
                   'multidisciplinario.',
         'values': [
-            {'name': 'Responsabilidad', 'icon': 'bi-shield-check', 'description': 'Compromiso total con nuestros pacientes'},
-            {'name': 'Respeto', 'icon': 'bi-hand-thumbs-up', 'description': 'Trato digno y considerado'},
-            {'name': 'Confianza', 'icon': 'bi-heart-pulse', 'description': 'Relaciones basadas en la credibilidad'},
-            {'name': 'Honestidad', 'icon': 'bi-check-circle', 'description': 'Transparencia en cada acción'},
-            {'name': 'Tolerancia', 'icon': 'bi-people', 'description': 'Respeto a la diversidad'},
-            {'name': 'Empatía', 'icon': 'bi-emoji-smile', 'description': 'Comprensión y apoyo genuino'},
-            {'name': 'Innovación', 'icon': 'bi-lightbulb', 'description': 'Mejora continua de servicios'},
-            {'name': 'Compromiso', 'icon': 'bi-star-fill', 'description': 'Dedicación con nuestro propósito'},
-            {'name': 'Excelencia', 'icon': 'bi-award', 'description': 'Calidad superior en todo'},
-            {'name': 'Calidez Humana', 'icon': 'bi-hearts', 'description': 'Atención con amor y cuidado'},
+            {
+                'name': 'Confianza',
+                'icon': 'bi-heart-pulse-fill',
+                'description': 'Relaciones basadas en la credibilidad y el respeto mutuo',
+                'bg_color': 'bg-info',
+                'text_color': 'text-info'
+            },
+            {
+                'name': 'Innovación',
+                'icon': 'bi-lightbulb',
+                'description': 'Mejora continua en nuestros servicios y procesos',
+                'bg_color': 'bg-info',
+                'text_color': 'text-info'
+            },
+            {
+                'name': 'Compromiso',
+                'icon': 'bi-star-fill',
+                'description': 'Dedicación total con nuestro propósito y pacientes',
+                'bg_color': 'bg-danger',
+                'text_color': 'text-danger'
+            },
+            {
+                'name': 'Excelencia',
+                'icon': 'bi-award',
+                'description': 'Calidad superior en cada atención que brindamos',
+                'bg_color': 'bg-success',
+                'text_color': 'text-success'
+            },
         ],
-        'team_image': 'images/equipo_medico_vitales_1764968485198.png'
+        'team_image': 'images/equipo_vitales_profesional_1765720906420.png'
     }
     return render(request, 'Vitalesweb/nosotros.html', context)
 

@@ -8,24 +8,29 @@
    ============================================ */
 :root {
     /* Primary Colors */
-    --vitales-primary: #0056b3;      /* Medical Dark Blue */
-    --vitales-secondary: #dc3545;    /* Emergency Red */
-    --vitales-accent: #17a2b8;       /* Light Blue */
-    
+    --vitales-primary: #0056b3;
+    /* Medical Dark Blue */
+    --vitales-secondary: #dc3545;
+    /* Emergency Red */
+    --vitales-accent: #17a2b8;
+    /* Light Blue */
+
     /* Neutral Colors */
-    --vitales-dark: #2c3e50;         /* Dark Gray Text */
-    --vitales-light: #f8f9fa;        /* Light Gray Background */
+    --vitales-dark: #2c3e50;
+    /* Dark Gray Text */
+    --vitales-light: #f8f9fa;
+    /* Light Gray Background */
     --vitales-white: #ffffff;
-    
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #0056b3 0%, #17a2b8 100%);
     --gradient-danger: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-    
+
     /* Transitions */
     --transition-base: all 0.3s ease;
 }
@@ -135,6 +140,10 @@ body {
     z-index: 10;
 }
 
+.carousel-caption-custom .container {
+    padding: 2rem 1rem;
+}
+
 .carousel-item {
     position: relative;
 }
@@ -148,11 +157,13 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 
 /* ============================================
    STATISTICS SECTION
@@ -402,23 +413,23 @@ html {
     .carousel-img {
         height: 400px;
     }
-    
+
     .stat-number {
         font-size: 2.5rem;
     }
-    
+
     .stat-icon {
         font-size: 3rem;
     }
-    
+
     .display-3 {
         font-size: 2.5rem;
     }
-    
+
     .display-4 {
         font-size: 2rem;
     }
-    
+
     .display-5 {
         font-size: 1.75rem;
     }
@@ -428,11 +439,11 @@ html {
     .carousel-img {
         height: 300px;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .navbar-brand {
         font-size: 1.25rem;
     }
@@ -445,6 +456,7 @@ html {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -455,6 +467,7 @@ html {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -463,9 +476,12 @@ html {
 
 /* Loading Animation */
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.5;
     }
@@ -500,6 +516,7 @@ html {
    PRINT STYLES
    ============================================ */
 @media print {
+
     .navbar,
     footer,
     .btn,
@@ -507,7 +524,7 @@ html {
     .carousel-control-next {
         display: none !important;
     }
-    
+
     body {
         color: #000;
         background: #fff;

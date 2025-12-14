@@ -81,7 +81,7 @@
             {% for client in clients %}
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="client-logo-card p-3 bg-white rounded shadow-sm hover-lift">
-                    <img src="{{ client.logo }}" alt="{{ client.name }}" class="img-fluid">
+                    <img src="{% static client.logo %}" alt="{{ client.name }}" class="img-fluid">
                 </div>
             </div>
             {% endfor %}
