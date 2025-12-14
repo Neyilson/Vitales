@@ -45,12 +45,12 @@ def index_view(request):
             }
         ],
         'clients': [
-            {'name': 'PDVSA', 'logo': 'img/pdvsa_logo.png'},
-            {'name': 'Venemergencia', 'logo': 'img/venemergencia_logo.png'},
-            {'name': 'Bancamiga', 'logo': 'img/bancamiga_logo.png'},
-            {'name': 'Bolivariana de Puertos', 'logo': 'img/bolivariana_puertos_logo.png'},
-            {'name': 'La Mundial de Seguros', 'logo': 'img/lamundial_logo.jpg'},
-            {'name': 'UCNE', 'logo': 'img/ucne_logo.png'},
+            {'name': 'PDVSA', 'logo': 'img/pdvsa_logo.png', 'logo_class': ''},
+            {'name': 'Venemergencia', 'logo': 'img/venemergencia_logo.png', 'logo_class': 'logo-small'},
+            {'name': 'Bancamiga', 'logo': 'img/bancamiga_logo.png', 'logo_class': 'logo-small'},
+            {'name': 'Bolivariana de Puertos', 'logo': 'img/bolivariana_puertos_logo.png', 'logo_class': ''},
+            {'name': 'La Mundial de Seguros', 'logo': 'img/lamundial_logo.jpg', 'logo_class': ''},
+            {'name': 'UCNE', 'logo': 'img/ucne_logo.png', 'logo_class': ''},
         ],
         'instagram_url': 'https://www.instagram.com/vitales.vzla/'
     }

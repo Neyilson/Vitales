@@ -227,11 +227,26 @@ body {
    ============================================ */
 .client-logo-card {
     transition: var(--transition-base);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .client-logo-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
+}
+
+.client-logo-card img {
+    max-height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Clase especial para logos que necesitan ser más grandes */
+.client-logo-card img.logo-small {
+    max-height: 80px;
 }
 
 /* ============================================
